@@ -1,0 +1,31 @@
+[
+  {
+  	"id": "student1",
+  	"name": "john",
+  	"fullname": "john doe",
+  	"email": "123@gmail.com",
+  	"cell": "123456",
+  	"address": "123 street CA"
+
+  },
+
+  {
+  	"id": "student2",
+  	"name": "mark",
+  	"fullname": "mark lynn",
+  	"email": "123@gmail.com",
+  	"cell": "123456",
+  	"address": "1321 street CA"
+
+  },
+
+  {
+  	"id": "student3",
+  	"name": "james",
+  	"fullname": "james witalker",
+  	"email": "783@gmail.com",
+  	"cell": "1235454456",
+  	"address": "785552 street CA"
+
+  }
+]

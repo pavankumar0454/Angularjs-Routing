@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Routing</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+<div>
+  <nav>
+    <a href="#/!">Menu</a>
+    <a href="#!contact">Contact</a>
+    <a href="#!service">Service</a>
+  </nav>
+  <div ng-view></div>
+</div>
+
+<script> 
+  var app= angular.module("myApp", ["ngRoute"]);
+  app.config(function($routeProvider){
+     $routeProvider
+     .when("/", {
+     	templateUrl: "menu.html",
+     	controller: "MenuCtrl"
+     })
+     .when("/contact", {
+     	templateUrl: "contact.html",
+     	controller: "ContactCtrl"
+     })
+     .when("/service", {
+     	templateUrl: "service.html",
+     	controller: "ServiceCtrl"
+     });
+  });
+ app.controller("MenuCtrl", function($scope, $http){
+ 	$http.get("menu.json").then(function(response){
+          $scope.menu = response.data;
+
+ 	})
+ });
+ app.controller("ContactCtrl", function($scope, $http){
+ 	$http.get("contact.json").then(function(response){
+       $scope.contact = response.data;
+ 	})
+ });
+ app.controller("ServiceCtrl", function($scope){
+ 	$scope.msg = "msg is controlled by ServiceCtrl"
+ });
+
+
+</script>
+</body>
+</html>
